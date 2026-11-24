@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+  <title>お手続き確認書｜ユア・エース</title>
+  <link rel="stylesheet" href="style.css"><script defer src="../api.js"></script><script defer src="form-schema.js"></script><script defer src="engine.js"></script><script defer src="app.js"></script><script defer src="embed.js"></script>
+<link rel="stylesheet" href="../banner.css"></head>
+<body><p class="demo-banner">操作デモ｜架空データのみ・Chatworkへの実送信なし</p>
+  <a class="skip" href="#content">入力欄へ進む</a>
+  <header class="site-header"><img id="brand-logo" src="assets/your-ace-logo.svg" width="200" height="60" alt="弁護士法人ユア・エース"></header>
+  <nav class="stepper" aria-label="入力の流れ"><ol class="flow"><li id="flow-input" class="is-current" aria-current="step"><span class="step-number" aria-hidden="true">1</span><span class="flow-label">入力</span></li><li id="flow-review"><span class="step-number" aria-hidden="true">2</span><span class="flow-label">確認</span></li><li id="flow-done"><span class="step-number" aria-hidden="true">3</span><span class="flow-label">完了</span></li></ol></nav>
+  <main id="content" class="page-shell">
+    <h1 id="form-title">お手続き確認書</h1><div id="form-description" class="source-description"></div>
+    <p id="loading-panel" role="status">フォームを読み込んでいます。</p>
+    <div id="fatal" class="fatal" role="alert" hidden></div>
+    <section id="form-panel" class="paper-panel" hidden>
+      <div id="error-summary" class="error-summary" role="alert" tabindex="-1" hidden></div>
+      <form id="answer-form" novalidate><div class="website-field" aria-hidden="true"><label>Webサイト<input id="website" name="website" type="text" autocomplete="off" tabindex="-1"></label></div>
+        <section id="contact-panel" aria-labelledby="contact-title"><h2 id="contact-title" tabindex="-1">基本情報</h2><div id="contact-questions"></div></section>
+        <section id="question-panel" aria-labelledby="questions-title" hidden><h2 id="questions-title" tabindex="-1">確認事項</h2><div id="questions"></div></section>
+        <div class="form-navigation"><button id="back-button" class="button button-secondary" type="button" disabled>基本情報に戻る</button><button id="next-button" class="button button-primary" type="submit">確認事項の入力へ <span aria-hidden="true">→</span></button></div>
+      </form>
+    </section>
+    <section id="review-panel" class="paper-panel" aria-labelledby="review-title" hidden><h2 id="review-title" tabindex="-1">入力内容のご確認</h2><p class="review-next">内容を確認し、間違いがなければ画面下の「回答を送信する」を押してください。</p><div class="review-edit-actions"><button id="review-edit-contact" class="button-text" type="button">基本情報を修正</button><button id="review-edit-questions" class="button-text" type="button">確認事項を修正</button></div><div id="review-content"></div><label id="correction-confirm-wrap" class="option-card" hidden><input id="correction-confirm" type="checkbox"><span>入力内容を確認しました</span></label><p id="review-error" class="field-error" role="alert" tabindex="-1" hidden></p><div class="form-navigation"><button id="review-back" class="button button-secondary" type="button">入力に戻る</button><button id="finish-button" class="button button-primary" type="button">回答を送信する <span aria-hidden="true">→</span></button></div></section>
+    <section id="done-panel" class="paper-panel done-panel" aria-labelledby="done-title" hidden><div class="done-mark" aria-hidden="true">✓</div><h2 id="done-title" tabindex="-1">回答を受け付けました</h2><p id="completion-note" class="completion-note">ご回答ありがとうございました。</p><p id="receipt-id" class="local-receipt" hidden></p></section>
+    <p id="session-note" class="session-note">送信前に画面を閉じると、入力内容は保存されません。</p>
+
+  </main>
+  <footer class="site-footer">弁護士法人ユア・エース</footer>
+  <noscript>このフォームにはJavaScriptが必要です。</noscript>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>案件の確認｜ユア・エース</title>
+<link rel="stylesheet" href="review.css">
+<script defer src="../api.js"></script>
+<script defer src="review.js"></script>
+<link rel="stylesheet" href="../banner.css"><script defer src="../auto-demo.js"></script></head>
+<body><p class="demo-banner">操作デモ｜架空データのみ・Chatworkへの実送信なし</p>
+<main>
+<header><p class="brand">ユア・エース</p><h1>案件の確認</h1></header>
+<form id="review-login" class="card">
+  <h2>担当弁護士の確認</h2>
+  <label for="review-code">担当者用パスワード</label>
+  <input type="password" id="review-code" autocomplete="current-password" minlength="20" maxlength="120" required>
+  <button class="primary" type="submit">この案件を開く</button>
+</form>
+<p id="review-error" class="error" role="alert" hidden></p>
+<section id="review-case" hidden aria-labelledby="review-client">
+  <div class="card case-head"><div><p class="eyebrow">依頼者</p><h2 id="review-client"></h2><p id="review-cycle"></p></div><div class="review-actions"><a href="#review-result-title">確認結果へ</a><button type="button" id="review-logout">閉じる</button></div></div>
+  <section class="card" aria-labelledby="review-answers-title">
+    <h2 id="review-answers-title">提出されたフォーム</h2>
+    <p class="eyebrow">質問と回答を確認できます。入力内容は変更できません。</p>
+    <div id="review-answers"></div>
+  </section>
+  <section class="card" aria-labelledby="review-result-title">
+    <h2 id="review-result-title">確認結果</h2>
+    <p id="review-state" role="status"></p>
+    <form id="review-decision" hidden>
+      <fieldset><legend>判断を選ぶ</legend>
+        <label class="option"><input type="radio" name="result" value="approved" required> 問題なし</label>
+        <label class="option"><input type="radio" name="result" value="returned" required> 差し戻し</label>
+      </fieldset>
+      <label for="review-reason" id="review-reason-label" hidden>差し戻しの理由
+        <textarea id="review-reason" maxlength="800" rows="3" disabled></textarea>
+      </label>
+      <button class="primary" type="submit">判断を保存</button>
+    </form>
+    <p id="review-next"></p>
+  </section>
+</section>
+</main>
+</body>
+</html>
